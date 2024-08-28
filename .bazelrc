@@ -1,0 +1,11 @@
+build:remote --experimental_remote_downloader=grpcs://remote.buildbuddy.io
+build:remote --remote_download_minimal
+build:remote --bes_results_url=https://app.buildbuddy.io/invocation/
+build:remote --bes_backend=grpcs://remote.buildbuddy.io
+build:remote --remote_executor=grpcs://remote.buildbuddy.io
+build:remote --remote_timeout=3600
+build:remote --remote_header=x-buildbuddy-api-key=FSJqczPN4Qgeq3uqTgHK
+build:remote --disk_cache=""
+build:remote --jobs=80
+
+build --config=remote
