@@ -1,0 +1,17 @@
+name: Build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  bazel-build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: bazel build //... -c opt
+    - name: Run tests
+      run: bazel test //... -c opt
